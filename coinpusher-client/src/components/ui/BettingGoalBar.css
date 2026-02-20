@@ -1,0 +1,60 @@
+/* ===== 베팅 목표 바 ===== */
+.betting-goal-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    background: rgba(0, 0, 0, 0.75);
+    border: 1px solid rgba(0, 255, 136, 0.4);
+    border-radius: 12px;
+    padding: 10px 24px;
+    backdrop-filter: blur(8px);
+    box-shadow:
+        0 0 20px rgba(0, 255, 136, 0.2),
+        inset 0 1px 0 rgba(255,255,255,0.1);
+}
+
+.betting-goal-label {
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(0, 255, 136, 0.8);
+    letter-spacing: 0.5px;
+}
+
+.betting-count {
+    color: #00ff88;
+    font-size: 18px;
+}
+
+/* 진행 바 트랙 */
+.betting-progress-track {
+    position: relative;
+    width: 300px;
+    height: 16px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid rgba(0, 255, 136, 0.3);
+}
+
+/* 채워지는 바 - 청록→초록 그라데이션 */
+.betting-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #00d4ff 0%, #00ff88 50%, #80ff00 100%);
+    border-radius: 8px;
+    transition: width 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 255, 136, 0.6);
+}
+
+/* 하이라이트 shine */
+.betting-progress-shine {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 50%;
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 8px 8px 0 0;
+    pointer-events: none;
+    transition: width 0.3s ease;
+}

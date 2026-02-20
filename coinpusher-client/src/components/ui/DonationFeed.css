@@ -1,0 +1,68 @@
+/* ===== 도네이션 피드 ===== */
+.donation-feed {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    pointer-events: none;
+}
+
+/* 도네이션 카드 개별 */
+.donation-card {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid rgba(255, 200, 0, 0.5);
+    border-radius: 10px;
+    padding: 10px 14px;
+    backdrop-filter: blur(8px);
+    min-width: 220px;
+    box-shadow:
+        0 0 15px rgba(255, 180, 0, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    animation: slideInLeft 0.4s ease-out both;
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.donation-icon {
+    font-size: 28px;
+    filter: drop-shadow(0 0 6px rgba(255, 200, 0, 0.8));
+    flex-shrink: 0;
+}
+
+.donation-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.donation-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.donation-amount {
+    font-size: 16px;
+    font-weight: 800;
+    color: #ffd700;
+    text-shadow: 0 0 8px rgba(255, 215, 0, 0.8);
+}
+
+.donation-user {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.6);
+}

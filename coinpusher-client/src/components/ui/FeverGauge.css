@@ -1,0 +1,149 @@
+/* ===== 피버 게이지 ===== */
+.fever-gauge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    pointer-events: none;
+}
+
+/* FEVER 타이틀 */
+.fever-label {
+    font-size: 14px;
+    font-weight: 900;
+    color: #ff4400;
+    text-shadow:
+        0 0 10px rgba(255, 68, 0, 0.9),
+        0 0 20px rgba(255, 68, 0, 0.5);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+/* 피버 활성화 시 라벨 펄스 */
+.fever-active .fever-label {
+    animation: feverPulse 0.5s ease-in-out infinite alternate;
+}
+
+@keyframes feverPulse {
+    from {
+        text-shadow: 0 0 10px rgba(255, 68, 0, 0.9), 0 0 20px rgba(255, 68, 0, 0.5);
+    }
+
+    to {
+        text-shadow: 0 0 20px rgba(255, 150, 0, 1), 0 0 40px rgba(255, 100, 0, 0.8);
+    }
+}
+
+/* 불꽃 이모지 이펙트 */
+.fever-flame {
+    display: flex;
+    gap: 2px;
+    font-size: 20px;
+    animation: flameWiggle 0.3s ease-in-out infinite alternate;
+}
+
+@keyframes flameWiggle {
+    from {
+        transform: rotate(-3deg) scale(1);
+    }
+
+    to {
+        transform: rotate(3deg) scale(1.1);
+    }
+}
+
+/* 게이지 트랙 (세로) */
+.fever-track {
+    position: relative;
+    width: 28px;
+    height: 180px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 14px;
+    border: 2px solid rgba(255, 100, 0, 0.5);
+    overflow: visible;
+    box-shadow:
+        0 0 15px rgba(255, 80, 0, 0.3),
+        inset 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* 눈금 마크 */
+.fever-mark {
+    position: absolute;
+    left: -6px;
+    width: 6px;
+    height: 1px;
+    background: rgba(255, 100, 0, 0.5);
+}
+
+/* 채워지는 게이지 - 아래에서 위로 */
+.fever-fill {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top,
+            #ff2200 0%,
+            #ff6600 40%,
+            #ffaa00 80%,
+            #ffee00 100%);
+    border-radius: 0 0 12px 12px;
+    transition: height 0.3s ease;
+    box-shadow:
+        0 0 10px rgba(255, 100, 0, 0.8),
+        0 0 20px rgba(255, 50, 0, 0.4);
+}
+
+/* 피버 활성화 시 게이지 깜빡임 */
+.fever-active .fever-fill {
+    animation: feverGlow 0.4s ease-in-out infinite alternate;
+}
+
+@keyframes feverGlow {
+    from {
+        box-shadow: 0 0 10px rgba(255, 100, 0, 0.8);
+    }
+
+    to {
+        box-shadow: 0 0 25px rgba(255, 200, 0, 1), 0 0 50px rgba(255, 80, 0, 0.6);
+    }
+}
+
+/* 게이지 상단 불꽃 */
+.fever-tip {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) translateY(50%);
+    font-size: 18px;
+    animation: tipBounce 0.5s ease-in-out infinite alternate;
+    pointer-events: none;
+}
+
+@keyframes tipBounce {
+    from {
+        transform: translateX(-50%) translateY(50%) scale(1);
+    }
+
+    to {
+        transform: translateX(-50%) translateY(60%) scale(1.2);
+    }
+}
+
+/* 피버 발동 텍스트 */
+.fever-text-active {
+    font-size: 13px;
+    font-weight: 900;
+    color: #ffee00;
+    text-shadow: 0 0 10px rgba(255, 200, 0, 0.9);
+    animation: feverTextPulse 0.6s ease-in-out infinite alternate;
+    letter-spacing: 1px;
+}
+
+@keyframes feverTextPulse {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.1);
+    }
+}
