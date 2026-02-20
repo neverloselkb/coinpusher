@@ -57,4 +57,4 @@
 - 구글 애드센스 등 수익화 배너 광고 연동 (우측 하단/상단 Placeholder 영역).
 
 ---
-*개발 및 디자인: 데이터세탁소(Data Laundry) & Antigravity AI*
+*개발 및 디자인: Antigravity AI*
