@@ -1,5 +1,3 @@
-import React, { useEffect, useRef } from 'react'
-
 interface GoogleAdProps {
     /** 광고 단위가 차지할 너비 */
     width?: number | string
