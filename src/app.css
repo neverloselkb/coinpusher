@@ -31,8 +31,10 @@
 
 /* ===== 3D 캔버스 ===== */
 .game-canvas-wrapper {
-    position: absolute;
-    inset: 0;
+    flex: 1;
+    /* 가용한 전체 높이 차지 */
+    width: 100%;
+    position: relative;
     z-index: 1;
 }
 

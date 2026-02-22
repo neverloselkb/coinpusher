@@ -14,15 +14,38 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+html,
 body {
   margin: 0;
   padding: 0;
-  width: 100vw;
-  height: 100vh;
+  background-color: #050012;
+  color: #fff;
+  overflow-y: auto !important;
+  /* 항상 스크롤 허용 (단, play-root 내부는 hidden) */
+  height: auto;
 }
 
-/* Leva 설정 패널이 우측 상단 타워 광고(width: 160px)를 가리지 않도록 위치 이동 */
-.leva-c-kWvdbf,
-#leva__root {
+/* 3D 게임 화면(/play) 일 때 화면을 꽉 채우고 스크롤을 막는 컨테이너 */
+.play-root {
+  position: fixed;
+  inset: 60px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* 일반 웹 페이지 콘텐츠 래퍼 */
+.page-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 100px 20px 40px;
+  /* 상단 헤더 공간 고려 */
+  min-height: 100vh;
+}
+
+/* Leva 설정 패널이 우측 상단 타워 광고(width: 160px)와 헤더(height: 60px)를 가리지 않도록 위치 이동 */
+[class*="leva-"] {
   right: 190px !important;
+  top: 80px !important;
+  z-index: 90 !important;
 }
