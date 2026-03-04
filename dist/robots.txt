@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://coinpusher.pages.dev/sitemap.xml

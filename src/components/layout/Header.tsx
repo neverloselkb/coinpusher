@@ -1,5 +1,10 @@
 import { NavLink } from 'react-router-dom'
 
+/**
+ * Header - 전체 사이트 네비게이션
+ * - 왜: 애드센스 정책상 "접근 가능하고 사용하기 쉬운 네비게이션" 필수
+ * - 주요 콘텐츠 페이지로의 링크를 명확히 제공
+ */
 export default function Header() {
 
     return (
@@ -37,9 +42,10 @@ export default function Header() {
 
             <nav style={{
                 display: 'flex',
-                gap: '24px',
+                gap: '20px',
                 fontFamily: 'Inter, sans-serif',
                 fontWeight: 600,
+                fontSize: '0.9rem',
             }}>
                 <NavLink
                     to="/"
@@ -49,7 +55,7 @@ export default function Header() {
                         transition: 'color 0.2s',
                     })}
                 >
-                    홈 소개
+                    홈
                 </NavLink>
                 <NavLink
                     to="/play"
@@ -63,14 +69,45 @@ export default function Header() {
                     오락실 입장
                 </NavLink>
                 <NavLink
-                    to="/privacy"
+                    to="/guide"
                     style={({ isActive }) => ({
                         color: isActive ? '#FFD700' : '#ccc',
                         textDecoration: 'none',
                         transition: 'color 0.2s',
                     })}
                 >
-                    개인정보처리방침
+                    가이드
+                </NavLink>
+                <NavLink
+                    to="/faq"
+                    style={({ isActive }) => ({
+                        color: isActive ? '#00FFEE' : '#ccc',
+                        textDecoration: 'none',
+                        transition: 'color 0.2s',
+                    })}
+                >
+                    FAQ
+                </NavLink>
+                <NavLink
+                    to="/updates"
+                    style={({ isActive }) => ({
+                        color: isActive ? '#8B5CF6' : '#ccc',
+                        textDecoration: 'none',
+                        transition: 'color 0.2s',
+                    })}
+                >
+                    업데이트
+                </NavLink>
+                <NavLink
+                    to="/privacy"
+                    style={({ isActive }) => ({
+                        color: isActive ? '#888' : '#666',
+                        textDecoration: 'none',
+                        transition: 'color 0.2s',
+                        fontSize: '0.8rem',
+                    })}
+                >
+                    개인정보
                 </NavLink>
             </nav>
         </header>
